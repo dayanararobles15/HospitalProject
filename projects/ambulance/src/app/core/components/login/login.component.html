@@ -1,0 +1,34 @@
+<form fxLayout="column" [formGroup]="group">
+    <h2>Credenciales</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input type="text"
+            matInput
+            required
+            placeholder="Ingrese su correo"
+            formControlName="correo">
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="{{lockIcon ? 'password' : 'text'}}"
+            matInput
+            required
+            placeholder="Ingrese su contraseña"
+            formControlName="contraseña">
+            <button  mat-icon-button
+                matSuffix
+                type="button"
+                (click)='lockIcon = !lockIcon'>
+                <mat-icon>{{ lockIcon ? "lock" : "lock_open" }}</mat-icon>
+            </button>
+    </mat-form-field>
+    <re-captcha class="recaptcha" formControlName="recaptchaReactive"></re-captcha>
+    <button 
+        mat-raised-button
+        color="primary"
+        [disabled]="group.invalid"
+        (click)="login()"
+        >Ingresar</button>
+</form>
+

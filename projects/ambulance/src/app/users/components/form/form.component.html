@@ -1,0 +1,35 @@
+<mat-toolbar fxLayout fxLayoutAlign="space-between center">
+    <h3>Registro</h3>
+    <button mat-icon-bbutton mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-dialog-content>
+    <form fxLayout="column" [formGroup]="group">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input type="text" matInput formControlName="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Rol</mat-label>
+            <input type="text" matInput formControlName="profile" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Activo</mat-label>
+            <input type="text" matInput formControlName="active" required>
+        </mat-form-field>  
+        <div fxLayout fxLayoutAlign="end" fxLayoutGap="10px">
+            <button mat-raised-button color="primary" type="button" (click)="save()">
+                Grabar
+            </button>
+            <button mat-button type="button" color="primary" mat-dialog-close>
+                Cancelar
+            </button>
+        </div>                      
+    </form>
+</mat-dialog-content>
