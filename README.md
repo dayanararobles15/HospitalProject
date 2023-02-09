@@ -12,8 +12,11 @@ This project manages the staff of a hospital to have total control of all types 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 -TypeScript
+
 -HTML
+
 -CSS
+
 -JavaScript
 
 ## :clipboard: Requirements
